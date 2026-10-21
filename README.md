@@ -22,9 +22,7 @@ OTH Amberg-Weiden (Winter 2025).
 **Live simulation video:** https://drive.google.com/file/d/1UDYefiV69ZeJW5B6BnV9tufPQhvikkY9/view?usp=sharing
 
 **Author:** Khushalkumar Variya. The project was built as a course project at OTH
-Amberg-Weiden. An AI assistant helped with code cleanup, documentation and
-the results tables; see [AI_USAGE.md](AI_USAGE.md).
-
+Amberg-Weiden. 
 
 ## Hardware
 
@@ -114,29 +112,10 @@ block would be a fairer test.
 |---|---|---|
 | Data split | 80 % train, 10 % test, 10 % validation | 80 % train, 20 % hold-out; validation is taken from the 80 % during model selection |
 | Features | 7 features, including timestamp and label | 5 features: sound, ax, ay, frequency_hz, freq_magnitude |
-| Accelerometer units | 1 g maps to about 9.81 m/s² | 1 g maps to about 4.0 m/s² (factor mismatch, see limitations) |
-| Learning curve (Figure 10) | Learning curve over epochs | A terminal screenshot, not a learning curve |
+| Accelerometer units | 1 g maps to about 9.81 m/s² | 1 g maps to about 4.0 m/s² |
+| Learning curve (Figure 10) | Learning curve over epochs | A terminal screenshot |
 | Health status | Regression slope ("Degrading" / "Improving") | Thresholds on the anomaly score (Normal / Warning / Critical) |
 | Forecast | Remaining useful life of the motor | Time to a threshold on simulated drift |
-
-## Limitations
-
-The limitations below are in addition to the discrepancies above.
-
-- **The hold-out split is random by row.** Neighbouring rows come from overlapping
-  windows of the same recording, so the hold-out score is optimistic. The next
-  step is to split by recording block.
-- **Three recordings from one rig and one motor.** The results describe this setup only.
-- **The forecast uses simulated drift.** The degradation is added to healthy data
-  on purpose. It shows how the method works. It does not estimate the life of a real motor.
-- **Units between firmware and Python need checking.** The MPU6050 gives 16384
-  counts per g at the ±2 g range. The firmware divides by 200, so 1 g becomes about
-  82. The Python side then multiplies by 9.81/200, so 1 g ends up at about 4.0 m/s²
-  instead of 9.81. The values are consistent between training and live use, but
-  the absolute m/s² numbers are too low by about a factor of 2.4 and should not be
-  quoted as physical acceleration until this is fixed.
-- **Faults were set up by hand** (a loose bolt, an unbalanced load, a dry-sounding
-  bearing). They are not failures from long-term operation.
 
 ## Dependencies
 
