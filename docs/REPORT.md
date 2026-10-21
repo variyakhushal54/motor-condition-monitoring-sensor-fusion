@@ -3,10 +3,6 @@
 Khushalkumar Variya
 OTH Amberg-Weiden, Study programme "Artificial Intelligence for Industrial Applications"
 
-> This is a text version of the project report from Winter 2025. Where the report
-> described the code or the results differently from what the code actually does,
-> the text here follows the code and the difference is noted.
-
 ## Abstract
 
 Unplanned motor breakdowns are expensive. This project builds a motor health
