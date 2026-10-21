@@ -140,4 +140,4 @@ The limitations below are in addition to the discrepancies above.
 
 ## Dependencies
 
-See `requirements.txt`. Tested with Python 3.11.
+See `requirements.txt`.
