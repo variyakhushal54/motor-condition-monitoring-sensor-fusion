@@ -114,12 +114,6 @@ The firmware divides by 200, so 1 g becomes about 82 in the serial data. The Pyt
 code then multiplies by 9.81/200. As a result, 1 g ends up at about 4.0 m/s²
 instead of 9.81 m/s².
 
-*Correction:* the original report said that a static 1 g maps to about 9.81 m/s².
-With the current factors it does not. The values are consistent between training
-and live use, so the classifiers still work, but the absolute m/s² values are
-about 2.4 times too low. Fixing this needs a single conversion step between firmware
-and Python, checked against a known reference.
-
 ### 6.2 Standardisation
 
 Features are standardised before they go into the models so that large numbers do
