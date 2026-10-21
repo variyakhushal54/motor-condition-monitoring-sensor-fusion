@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+data/processed/
+data/live_log.csv
+models/
+sensor_log.csv
