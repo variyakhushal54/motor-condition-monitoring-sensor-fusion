@@ -97,9 +97,6 @@ thresholds to give a status:
 - **Warning:** score between -0.05 and 0.05
 - **Critical:** score below -0.05
 
-*Correction:* the original report described a linear-regression trend on the
-scores ("Degrading" or "Improving"). The current code uses the thresholds above.
-
 ### 5.4 Spectrogram
 
 The sound signal is shown as a rolling histogram over time. The x-axis is time,
